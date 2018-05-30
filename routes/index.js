@@ -2,13 +2,24 @@ const express = require('express');
 const faker = require('faker');
 const router = express.Router();
 
-router.get('/', (req, res)=>{
-  res.render('index', {
+function mockRestuarant () {
+  return {
   	company: faker.company.companyName(),
   	address: faker.address.streetAddress(),
   	image: faker.image.food()
-	});
+	}
+}
+
+router.get('/', (req, res)=>{
+  res.render('index', mockRestuarant());
 });
+
+router.get('/restaurants', (req, res, next) => {
+  res.json({
+    path: req.url,
+    data: [ mockRestuarant(), mockRestuarant(), mockRestuarant() ]
+  })
+})
 
 
 // let randomEatery = faker.company.companyName();
@@ -20,11 +31,7 @@ router.get('/', (req, res)=>{
 
 
 router.get('/card-template', (req,res)=>{
-  res.render('card-template', {
-  	company: faker.company.companyName(),
-  	address: faker.address.streetAddress(),
-  	image: faker.image.food()
-	});
+  res.render('card-template', mockRestuarant());
 });
 
 module.exports = router;
