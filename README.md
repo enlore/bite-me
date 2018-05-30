@@ -31,7 +31,7 @@ You should see a success message in your CLI, that the server is running on port
 
 In your browser, input url [localhost:3000] (localhost:3000)
 
-#For dev
+# For dev
 
 In the views directory are the .ejs files that you will be developing in.
 
