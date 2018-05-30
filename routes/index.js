@@ -4,10 +4,10 @@ const router = express.Router();
 
 function mockRestuarant () {
   return {
-  	company: faker.company.companyName(),
-  	address: faker.address.streetAddress(),
-  	image: faker.image.food()
-	}
+    company: faker.company.companyName(),
+    address: faker.address.streetAddress(),
+    image: faker.image.food()
+  }
 }
 
 router.get('/', (req, res)=>{
