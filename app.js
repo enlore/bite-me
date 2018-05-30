@@ -34,4 +34,4 @@ app.use((err,req,res,next)=>{
 });
 
 
-app.listen(3000,()=>console.log("Loud and clear on localhost 3000. Stay golden pony-boy."));
+app.listen(3000,()=>console.log("Loud and clear on http://localhost:3000. Stay golden pony-boy."));
